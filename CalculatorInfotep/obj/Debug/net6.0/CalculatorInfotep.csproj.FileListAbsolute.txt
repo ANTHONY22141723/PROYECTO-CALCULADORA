@@ -1,0 +1,15 @@
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\bin\Debug\net6.0\CalculatorInfotep.exe
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\bin\Debug\net6.0\CalculatorInfotep.deps.json
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\bin\Debug\net6.0\CalculatorInfotep.runtimeconfig.json
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\bin\Debug\net6.0\CalculatorInfotep.dll
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\bin\Debug\net6.0\CalculatorInfotep.pdb
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\obj\Debug\net6.0\CalculatorInfotep.csproj.AssemblyReference.cache
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\obj\Debug\net6.0\CalculatorInfotep.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\obj\Debug\net6.0\CalculatorInfotep.AssemblyInfoInputs.cache
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\obj\Debug\net6.0\CalculatorInfotep.AssemblyInfo.cs
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\obj\Debug\net6.0\CalculatorInfotep.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\obj\Debug\net6.0\CalculatorInfotep.dll
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\obj\Debug\net6.0\refint\CalculatorInfotep.dll
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\obj\Debug\net6.0\CalculatorInfotep.pdb
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\obj\Debug\net6.0\CalculatorInfotep.genruntimeconfig.cache
+C:\Users\Usuario\OneDrive\Documentos\Mis Documentos\CalculatorInfotep\CalculatorInfotep\obj\Debug\net6.0\ref\CalculatorInfotep.dll
