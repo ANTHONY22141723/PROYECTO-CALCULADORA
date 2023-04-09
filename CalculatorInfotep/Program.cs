@@ -24,8 +24,11 @@ string NOREVERSE = Console.IsOutputRedirected ? "" : "\x1b[27m";
 string entradaMinuscula = "";
 //double suma = 0;
 double sumaAcumulada = 0;
-string operacion = "";
+double suma = 0;
+double diviiAcumulado = 0;
 int contador = 0;
+string operacion = "";
+
 double poteResult = 0;
 double exponente = 0;
 double basse = 0;
@@ -84,26 +87,31 @@ void Calculadora()
 {
     Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n");
     Console.BackgroundColor = ConsoleColor.Yellow;
-    Console.WriteLine($"                               {BLUE}   ----------------------BIENVENIDO A LA CALCULADORA CIENTIFICA DE ' WALLY, RICARDO, KENNETH, Y KAREN '!---------------------- {NORMAL}");
-    Console.WriteLine("\n\n\n");
+        Console.WriteLine($"                                    {BLUE}   ----------------------BIENVENIDO A LA CALCULADORA CIENTIFICA DE ' WALLY, RICARDO, KENNETH, Y KAREN '!---------------------- {NORMAL}");
+        Console.WriteLine("\n\n\n");
 
-    Console.WriteLine($"                                        {BLUE}                            SELECCIONA UNA OPCION DIGITANDO UN NUMERO POR FAVOR:{NORMAL} \n\n\n");
-    Console.WriteLine($"                                                       {BLUE}1. SUMA{NORMAL}                    {BLUE}  2. RESTA{NORMAL}                         {BLUE} 3. MULTIPLICACION{NORMAL}\n ");
+        Console.WriteLine($"                                             {BLUE}                            SELECCIONA UNA OPCION DIGITANDO UN NUMERO POR FAVOR:{NORMAL} \n\n\n");
+        Console.WriteLine($"                                                            {BLUE}1. SUMA{NORMAL}                    {BLUE}  2. RESTA{NORMAL}                         {BLUE} 3. MULTIPLICACION{NORMAL}\n\n ");
 
-    Console.WriteLine($"                                                       {BLUE}4. DIVISION{NORMAL}                {BLUE}  5. RAIZ CUADRADA{NORMAL}                {BLUE}  6. POTENCIA{NORMAL} \n");
-
-
-    Console.WriteLine($"                                                      {BLUE} 7. PI      {NORMAL}                {BLUE}  8. PORCENTAJE{NORMAL}                     {BLUE}9. REDONDEAR{NORMAL} \n");
+        Console.WriteLine($"                                                            {BLUE}4. DIVISION{NORMAL}                {BLUE}  5. RAIZ CUADRADA{NORMAL}                {BLUE}  6. POTENCIA{NORMAL} \n\n");
 
 
+        Console.WriteLine($"                                                           {BLUE} 7. PI      {NORMAL}                {BLUE}  8. PORCENTAJE{NORMAL}                     {BLUE}9. REDONDEAR{NORMAL} \n\n");
 
-    Console.WriteLine($"                                                      {BLUE}10. MODULO{NORMAL}                   {BLUE}11. LOGARITMO BASE DIEZ{NORMAL}           {BLUE}12. LOGARITMO NATURAL{NORMAL}  \n\n\n\n\n\n");
 
-    Console.WriteLine($"                                                                                        {BLUE}15. SALIR{NORMAL}\n");
+
+        Console.WriteLine($"                                                           {BLUE}10. MODULO{NORMAL}                   {BLUE}11. LOGARITMO BASE DIEZ{NORMAL}           {BLUE}12. LOGARITMO NATURAL{NORMAL}  \n\n");
+        Console.WriteLine($"                                                           {BLUE}13. SENO{NORMAL}                     {BLUE}14. COSENO{NORMAL}                        {BLUE}15. TANGENTE{NORMAL}  \n\n");
+        Console.WriteLine($"                                                           {BLUE}16. COTANGENTE{NORMAL}               {BLUE}17. SECANTE{NORMAL}                       {BLUE}18. COSECANTE{NORMAL}  \n\n\n\n\n\n");
+
+        Console.WriteLine($"                                                                                          {BLUE}20. SALIR{NORMAL}\n");
+         
+        
 
     string opcion = "";
     opcion = Console.ReadLine();
-
+    Console.Clear();
+    Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     switch (opcion)
     {
         case "1":
@@ -169,9 +177,37 @@ void Calculadora()
             LogaritmoNatural();
             break;
 
+        case "13":
+            Console.WriteLine($"                                                                           {BLUE}  13     Has seleccionado la opcion {MAGENTA}'SENO' {NORMAL}");
+            Seno();
+            break;
 
+        case "14":
+            Console.WriteLine($"                                                                           {BLUE}  14     Has seleccionado la opcion {MAGENTA}'COSENO' {NORMAL}");
+            Coseno();
+            break;
 
         case "15":
+            Console.WriteLine($"                                                                           {BLUE}  15     Has seleccionado la opcion {MAGENTA}'TANGENTE' {NORMAL}");
+            Tangente();
+            break;
+
+        case "16":
+            Console.WriteLine($"                                                                           {BLUE}  16     Has seleccionado la opcion {MAGENTA}'COTANGENTE' {NORMAL}");
+            Cotangente();
+            break;
+
+        case "17":
+            Console.WriteLine($"                                                                           {BLUE}  17     Has seleccionado la opcion {MAGENTA}'SECANTE' {NORMAL}");
+            Secante();
+            break;
+
+        case "18":
+            Console.WriteLine($"                                                                           {BLUE}  18     Has seleccionado la opcion {MAGENTA}'COSECANTE' {NORMAL}");
+            Cosecante();
+            break;
+
+        case "20":
             Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n");
             Console.WriteLine($"                                                {BLUE}   ------------ SELECCIONASTE LA OPCION{MAGENTA} 'salir'{NORMAL}.{BLUE}  PRESIONA UNA TECLA PARA SALIR DE LA APLICACION.------------{NORMAL} ");
 
@@ -356,58 +392,85 @@ void Multiplicar()
 void Dividir()
 {
 
-    double suma = 0;
+    suma = 0;
     Console.WriteLine();
-    double diviiAcumulado = 0;
-    int contador = 0;
-    while (entrada != "=")
+    diviiAcumulado = 0;
+    contador = 0;
+    int cuentaceros = 0;
+    
+    while (entrada != "=" && entrada != "0")
     {
+        
 
         if (contador > 0) Console.WriteLine($"                                                                      {CYAN}    DAME EL SIGUIENTE NUMERO PARA {MAGENTA}DIVIDIR, DE LO CONTRARIO OPRIME '=' PARA TERMINAR DE DIVIDIR {NORMAL}");
         else Console.WriteLine($"                                                                               {CYAN}    DAME EL PRIMER NUMERO PARA{MAGENTA} DIVIDIR, DE LO CONTRARIO OPRIME '=' PARA TERMINAR DE DIVIDIR{NORMAL}");
         entrada = Console.ReadLine();
         entradaMinuscula = entrada.ToLower();
+
+        if (entradaMinuscula == "0" && cuentaceros > 0) divicero(); 
         Console.WriteLine($"                                                                                           {BLUE}   {entradaMinuscula} {NORMAL}");
 
 
         if (entradaMinuscula != "=")
         {
+            if (entradaMinuscula == "0" && cuentaceros > 0) divicero(); 
+
             if (entradaMinuscula == "volver")
             {
                 Console.Clear();
                 Calculadora();
             }
 
+            if (entradaMinuscula == "0" && cuentaceros > 0) divicero();
+
             if (double.TryParse(entradaMinuscula, out suma))
             {
-                if (suma == 0) Console.WriteLine($"                                                                  {RED} '{entradaMinuscula}'     Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE {MAGENTA}'VOLVER'{NORMAL}  ");
-                if (diviiAcumulado == 0) { diviiAcumulado = suma; contador++; } else diviiAcumulado /= suma;
-            }
-            else Console.WriteLine($"                                                                                   {RED} '{entradaMinuscula}'  Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE {MAGENTA}'VOLVER'{NORMAL}");
+                
+               
+                if (diviiAcumulado == 0) { diviiAcumulado = suma; }
+              
+              else diviiAcumulado /= suma;
 
+              if(diviiAcumulado > 0) contador++;
+            
+            } 
+             else Console.WriteLine($"                                                                               {RED} '{entradaMinuscula}'  Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE {MAGENTA}'VOLVER'{NORMAL}");
+
+            
 
 
 
 
         }
 
-
     }
 
 
     Console.Clear();
     Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    Console.WriteLine($"                                                                                         {BLUE}    EL VALOR DE LA DIVISION ES{MAGENTA} {diviiAcumulado}{NORMAL}");
+   
+   
     Console.WriteLine("");
+    if (entrada == "0") Console.WriteLine($"                                                                  {RED}        DISCULPA, NO SE PUEDE DIVIDIR POR 'CERO'. {NORMAL} ");
+    else
+    {
+        Console.WriteLine($"                                                                                         {BLUE}    EL VALOR DE LA DIVISION ES{MAGENTA} {diviiAcumulado}{NORMAL}");
+    }
+
+    void divicero()
+    {
+        if (diviiAcumulado == 0) Console.WriteLine($"                                                                  {RED}        DISCULPA, NO SE PUEDE DIVIDIR POR 'CERO'. {NORMAL} ");
+    }
 
 
 
     //OPCIONES USUARIO
     OpcionesUsuario();
     if (operacion == "si") RealizarOtraOperacion();
+
 }
 
-
+//POTENCIA
 
 void Potencia()
 {
@@ -453,13 +516,13 @@ potenccia:
             if (double.TryParse(entradaMinuscula, out basse))
             {
 
-                if (basse == 0) { Console.WriteLine($"                                                                                     {RED}  Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
+                if (basse == 0) { Console.WriteLine($"                                                                                     {RED}'{entradaMinuscula}'  Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
 
                 else { contador++; goto potenccia; }
 
 
             }
-            else { Console.WriteLine($"                                                                                                    {RED}    Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
+            else { Console.WriteLine($"                                                                                                    {RED} '{entradaMinuscula}'   Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
 
         }
 
@@ -475,7 +538,7 @@ potenccia:
             if (double.TryParse(entradaMinuscula, out exponente))
             {
 
-                if (exponente == 0) { Console.WriteLine($"                                                                                    {RED}   Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'  {NORMAL}"); goto potenccia; }
+                if (exponente == 0) { Console.WriteLine($"                                                                                    {RED} '{entradaMinuscula}'  Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'  {NORMAL}"); goto potenccia; }
 
                 else
                 {
@@ -485,7 +548,7 @@ potenccia:
                 }
 
             }
-            else { Console.WriteLine($"                                                                                                        {RED}  Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
+            else { Console.WriteLine($"                                                                                                        {RED} '{entradaMinuscula}' Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
 
         }
 
@@ -542,13 +605,13 @@ potenccia:
             if (double.TryParse(entradaMinuscula, out basse))
             {
 
-                if (basse == 0) { Console.WriteLine($"                                                                                     {RED}   Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'  {NORMAL}"); goto potenccia; }
+                if (basse == 0) { Console.WriteLine($"                                                                                     {RED}'{entradaMinuscula}'   Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'  {NORMAL}"); goto potenccia; }
 
                 else { contador++; goto potenccia; }
 
 
             }
-            else { Console.WriteLine($"                                                                                       {RED}     Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
+            else { Console.WriteLine($"                                                                                       {RED} '{entradaMinuscula}'    Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
 
         }
 
@@ -643,13 +706,13 @@ potenccia:
             if (double.TryParse(entradaMinuscula, out basse))
             {
 
-                if (basse == 0) { Console.WriteLine($"                                                         {RED}   Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'  {NORMAL}"); goto potenccia; }
+                if (basse == 0) { Console.WriteLine($"                                                         {RED} '{entradaMinuscula}'  Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'  {NORMAL}"); goto potenccia; }
 
                 else { contador++; goto potenccia; }
 
 
             }
-            else { Console.WriteLine($"                                                                         {RED}     Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'  {NORMAL}"); goto potenccia; }
+            else { Console.WriteLine($"                                                                         {RED} '{entradaMinuscula}'    Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'  {NORMAL}"); goto potenccia; }
 
         }
 
@@ -665,7 +728,7 @@ potenccia:
             if (double.TryParse(entradaMinuscula, out exponente))
             {
 
-                if (exponente == 0) { Console.WriteLine($"                                                    {RED}   Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'  {NORMAL} "); goto potenccia; }
+                if (exponente == 0) { Console.WriteLine($"                                                    {RED} '{entradaMinuscula}'  Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'  {NORMAL} "); goto potenccia; }
 
                 else
                 {
@@ -675,7 +738,7 @@ potenccia:
                 }
 
             }
-            else { Console.WriteLine($"                                                                       {RED}    Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'   {NORMAL}"); goto potenccia; }
+            else { Console.WriteLine($"                                                                       {RED} '{entradaMinuscula}'   Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'   {NORMAL}"); goto potenccia; }
 
         }
 
@@ -685,7 +748,7 @@ potenccia:
 
     Console.Clear();
     Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    Console.WriteLine($"                                                                                      {BLUE}     EL {basse} PORCIENTO DE {exponente} ES {poteResult} {NORMAL}");
+    Console.WriteLine($"                                                                                      {BLUE} '{entradaMinuscula}'    EL {basse} PORCIENTO DE {exponente} ES {poteResult} {NORMAL}");
     Console.WriteLine("");
 
 
@@ -732,13 +795,13 @@ potenccia:
             if (double.TryParse(entradaMinuscula, out basse))
             {
 
-                if (basse == 0) { Console.WriteLine($"                                                           {RED}    Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
+                if (basse == 0) { Console.WriteLine($"                                                           {RED} '{entradaMinuscula}'   Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
 
                 else { contador++; goto potenccia; }
 
 
             }
-            else { Console.WriteLine($"                                                                           {RED}     Este valor no es valido, introduce un valor numerico PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
+            else { Console.WriteLine($"                                                                           {RED} '{entradaMinuscula}'    Este valor no es valido, introduce un valor numerico PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
 
         }
 
@@ -809,13 +872,13 @@ potenccia:
             if (double.TryParse(entradaMinuscula, out basse))
             {
 
-                if (basse == 0) { Console.WriteLine($"                                                                                 {RED}   Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
+                if (basse == 0) { Console.WriteLine($"                                                                                 {RED} '{entradaMinuscula}'  Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
 
                 else { contador++; goto potenccia; }
 
 
             }
-            else { Console.WriteLine($"                                                                                    {RED}     Este valor no es valido, introduce un valor numerico PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
+            else { Console.WriteLine($"                                                                                    {RED} '{entradaMinuscula}'    Este valor no es valido, introduce un valor numerico PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
 
         }
 
@@ -831,7 +894,7 @@ potenccia:
             if (double.TryParse(entradaMinuscula, out exponente))
             {
 
-                if (exponente == 0) { Console.WriteLine($"                                                       {RED}    Introduce un valor diferente de cero.   PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
+                if (exponente == 0) { Console.WriteLine($"                                                       {RED} '{entradaMinuscula}'   Introduce un valor diferente de cero.   PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
 
                 else
                 {
@@ -841,7 +904,7 @@ potenccia:
                 }
 
             }
-            else { Console.WriteLine($"                                                                             {RED}     Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'{NORMAL}"); goto potenccia; }
+            else { Console.WriteLine($"                                                                             {RED} '{entradaMinuscula}'    Este valor no es valido, introduce un valor numerico.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER'{NORMAL}"); goto potenccia; }
 
         }
 
@@ -898,13 +961,13 @@ potenccia:
             if (double.TryParse(entradaMinuscula, out basse))
             {
 
-                if (basse == 0) { Console.WriteLine($"                                                                                  {RED}      Introduce un valor diferente de cero. PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}  "); goto potenccia; }
+                if (basse == 0) { Console.WriteLine($"                                                                                  {RED}  '{entradaMinuscula}'    Introduce un valor diferente de cero. PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}  "); goto potenccia; }
 
                 else { contador++; goto potenccia; }
 
 
             }
-            else { Console.WriteLine($"                                                                                     {RED}     Este valor no es valido, introduce un valor numerico. PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
+            else { Console.WriteLine($"                                                                                     {RED} '{entradaMinuscula}'    Este valor no es valido, introduce un valor numerico. PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
 
         }
 
@@ -961,13 +1024,13 @@ potenccia:
             if (double.TryParse(entradaMinuscula, out basse))
             {
 
-                if (basse == 0) { Console.WriteLine($"                                                                                    {RED}    Introduce un valor diferente de cero  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
+                if (basse == 0) { Console.WriteLine($"                                                                                    {RED} '{entradaMinuscula}'   Introduce un valor diferente de cero  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
 
                 else { contador++; goto potenccia; }
 
 
             }
-            else { Console.WriteLine($"                                                                                     {RED}  Este valor no es valido, introduce un valor numerico   PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
+            else { Console.WriteLine($"                                                                                     {RED} '{entradaMinuscula}' Este valor no es valido, introduce un valor numerico   PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
 
         }
 
@@ -978,6 +1041,387 @@ potenccia:
     Console.Clear();
     Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     Console.WriteLine($"                                                                                                      {BLUE}        EL LOGARITMO NATURAL DE {basse} ES  {Math.Log(basse)} {NORMAL}");
+    Console.WriteLine("");
+
+
+
+    //OPCIONES USUARIO
+    OpcionesUsuario();
+    if (operacion == "si") RealizarOtraOperacion();
+
+
+
+}
+
+
+
+//SENO
+void Seno()
+{
+
+    Console.WriteLine();
+
+
+
+potenccia:
+    while (entrada != "=" && contador < 2)
+    {
+
+        if (contador == 0)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"                                                                                   {CYAN} DE QUE NUMERO QUIERES EL SENO ?  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}");
+            entrada = Console.ReadLine(); entradaMinuscula = entrada.ToLower();
+
+        }
+
+        if (entradaMinuscula != "=" && basse == 0)
+        {
+            if (entradaMinuscula == "volver")
+            {
+                Console.Clear();
+                Calculadora();
+            }
+
+            if (double.TryParse(entradaMinuscula, out basse))
+            {
+
+               // if (basse == 0) { Console.WriteLine($"                                                                                    {RED} '{entradaMinuscula}'   Introduce un valor diferente de cero  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
+
+                 { contador++; goto potenccia; }
+
+
+            }
+            else { Console.WriteLine($"                                                                                     {RED} '{entradaMinuscula}' Este valor no es valido, introduce un valor numerico   PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
+
+        }
+
+        break;
+
+    }
+
+    Console.Clear();
+    Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    Console.WriteLine($"                                                                                                      {BLUE}        EL SENO DE {basse} ES  {Math.Sin(basse)} {NORMAL}");
+    Console.WriteLine("");
+
+
+
+    //OPCIONES USUARIO
+    OpcionesUsuario();
+    if (operacion == "si") RealizarOtraOperacion();
+
+
+
+}
+
+
+
+
+//COSENO
+
+
+void Coseno()
+{
+
+    Console.WriteLine();
+
+
+
+potenccia:
+    while (entrada != "=" && contador < 2)
+    {
+
+        if (contador == 0)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"                                                                                   {CYAN} DE QUE NUMERO QUIERES EL COSENO ?  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}");
+            entrada = Console.ReadLine(); entradaMinuscula = entrada.ToLower();
+
+        }
+
+        if (entradaMinuscula != "=" && basse == 0)
+        {
+            if (entradaMinuscula == "volver")
+            {
+                Console.Clear();
+                Calculadora();
+            }
+
+            if (double.TryParse(entradaMinuscula, out basse))
+            {
+
+               // if (basse == 0) { Console.WriteLine($"                                                                                    {RED} '{entradaMinuscula}'   Introduce un valor diferente de cero  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
+
+                { contador++; goto potenccia; }
+
+
+            }
+            else { Console.WriteLine($"                                                                                     {RED} '{entradaMinuscula}' Este valor no es valido, introduce un valor numerico   PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
+
+        }
+
+        break;
+
+    }
+
+    Console.Clear();
+    Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    Console.WriteLine($"                                                                                                      {BLUE}        EL COSENO DE {basse} ES  {Math.Cos(basse)} {NORMAL}");
+    Console.WriteLine("");
+
+
+
+    //OPCIONES USUARIO
+    OpcionesUsuario();
+    if (operacion == "si") RealizarOtraOperacion();
+
+
+
+}
+
+
+
+
+//TANGENTE
+
+
+void Tangente()
+{
+
+    Console.WriteLine();
+
+
+
+potenccia:
+    while (entrada != "=" && contador < 2)
+    {
+
+        if (contador == 0)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"                                                                                   {CYAN} DE QUE NUMERO QUIERES LA TANGENTE ?  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}");
+            entrada = Console.ReadLine(); entradaMinuscula = entrada.ToLower();
+
+        }
+
+        if (entradaMinuscula != "=" && basse == 0)
+        {
+            if (entradaMinuscula == "volver")
+            {
+                Console.Clear();
+                Calculadora();
+            }
+
+            if (double.TryParse(entradaMinuscula, out basse))
+            {
+
+               // if (basse == 0) { Console.WriteLine($"                                                                                    {RED} '{entradaMinuscula}'   Introduce un valor diferente de cero  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
+
+                 contador++; goto potenccia;
+
+
+            }
+            else { Console.WriteLine($"                                                                                     {RED} '{entradaMinuscula}' Este valor no es valido, introduce un valor numerico   PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
+
+        }
+
+        break;
+
+    }
+
+    Console.Clear();
+    Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    Console.WriteLine($"                                                                                                      {BLUE}        LA TANGENTE DE {basse} ES  {Math.Tan(basse)} {NORMAL}");
+    Console.WriteLine("");
+
+
+
+    //OPCIONES USUARIO
+    OpcionesUsuario();
+    if (operacion == "si") RealizarOtraOperacion();
+
+
+
+}
+
+
+
+//COTANGENTE
+
+
+void Cotangente()
+{
+
+    Console.WriteLine();
+
+
+
+potenccia:
+    while (entrada != "=" && contador < 2)
+    {
+
+        if (contador == 0)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"                                                                                   {CYAN} DE QUE NUMERO QUIERES LA COTANGENTE ?  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}");
+            entrada = Console.ReadLine(); entradaMinuscula = entrada.ToLower();
+
+        }
+
+        if (entradaMinuscula != "=" && basse == 0)
+        {
+            if (entradaMinuscula == "volver")
+            {
+                Console.Clear();
+                Calculadora();
+            }
+
+            if (double.TryParse(entradaMinuscula, out basse))
+            {
+
+                if (basse == 0) { Console.WriteLine($"                                                                                    {RED} '{entradaMinuscula}'  NO SE PUEDE DIVIDIR POR CERO Introduce un valor diferente de cero  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
+
+                else { contador++; goto potenccia; }
+
+
+            }
+            else { Console.WriteLine($"                                                                                     {RED} '{entradaMinuscula}' Este valor no es valido, introduce un valor numerico   PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
+
+        }
+
+        break;
+
+    }
+
+    Console.Clear();
+    Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    Console.WriteLine($"                                                                                                      {BLUE}        LA COTANGENTE DE {basse} ES  {Math.Atan(basse)} {NORMAL}");
+    Console.WriteLine("");
+
+
+
+    //OPCIONES USUARIO
+    OpcionesUsuario();
+    if (operacion == "si") RealizarOtraOperacion();
+
+
+
+}
+
+
+//SECANTE
+
+
+void Secante()
+{
+
+    Console.WriteLine();
+
+
+
+potenccia:
+    while (entrada != "=" && contador < 2)
+    {
+
+        if (contador == 0)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"                                                                                   {CYAN} DE QUE NUMERO QUIERES LA SECANTE ?  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}");
+            entrada = Console.ReadLine(); entradaMinuscula = entrada.ToLower();
+
+        }
+
+        if (entradaMinuscula != "=" && basse == 0)
+        {
+            if (entradaMinuscula == "volver")
+            {
+                Console.Clear();
+                Calculadora();
+            }
+
+            if (double.TryParse(entradaMinuscula, out basse))
+            {
+
+                //if (basse == 0) { Console.WriteLine($"                                                                                    {RED} '{entradaMinuscula}'   Introduce un valor diferente de cero  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
+
+               contador++; goto potenccia; 
+
+
+            }
+            else { Console.WriteLine($"                                                                                     {RED} '{entradaMinuscula}' Este valor no es valido, introduce un valor numerico   PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
+
+        }
+
+        break;
+
+    }
+
+    Console.Clear();
+    Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    Console.WriteLine($"                                                                            {BLUE}        LA SECANTE DE {basse} ES  {Math.Acos(basse)} {NORMAL}");
+    Console.WriteLine("");
+
+
+
+    //OPCIONES USUARIO
+    OpcionesUsuario();
+    if (operacion == "si") RealizarOtraOperacion();
+
+
+
+}
+
+
+//COSECANTE
+
+void Cosecante()
+{
+
+    Console.WriteLine();
+
+
+
+potenccia:
+    while (entrada != "=" && contador < 2)
+    {
+
+        if (contador == 0)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"                                                                                   {CYAN} DE QUE NUMERO QUIERES LA COSECANTE ?  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}");
+            entrada = Console.ReadLine(); entradaMinuscula = entrada.ToLower();
+
+        }
+
+        if (entradaMinuscula != "=" && basse == 0)
+        {
+            if (entradaMinuscula == "volver")
+            {
+                Console.Clear();
+                Calculadora();
+            }
+
+            if (double.TryParse(entradaMinuscula, out basse))
+            {
+
+                if (basse == 0) { Console.WriteLine($"                                                                       {RED} '{entradaMinuscula}' NO SE PUEDE DIVIDIR POR CERO.  Introduce un valor diferente de cero.  PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL}"); goto potenccia; }
+
+                else { contador++; goto potenccia; }
+
+
+            }
+            else { Console.WriteLine($"                                                                                     {RED}'{entradaMinuscula}' Este valor no es valido, introduce un valor numerico   PARA VOLVER AL MENU PRINCIPAL ESCRIBE 'VOLVER' {NORMAL} "); goto potenccia; }
+
+        }
+
+        break;
+
+    }
+
+    Console.Clear();
+    Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    Console.WriteLine($"                                                                                                      {BLUE}       LA COSECANTE DE {basse} ES  {Math.Asin(basse)} {NORMAL}");
     Console.WriteLine("");
 
 
